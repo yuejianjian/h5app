@@ -63,6 +63,7 @@ export default new Router({
             title:'个人中心'
           },
           component: () =>import("@/pages/my/index.vue")
+      
         }
       ]
 
@@ -71,10 +72,26 @@ export default new Router({
       path: '/gooddetails',
       name: 'GoodDetails',
       meta:{
-        title:'登录页'
+        title:'商品详情页'
       },
       component: () =>import("@/pages/gooddetails/index.vue")
     },
+    {
+      path: '/searchlist',
+      name: 'SerachList',
+      meta:{
+        title:'商品查询列表'
+      },
+      component: () =>import("@/pages/searchlist/index.vue"),
+    },
+    {
+      path: '/sun',
+      name: 'Sun',
+      meta:{
+        title:'商品详情页子页面'
+      },
+      component: () =>import("@/pages/sun/index.vue")
+    }
     
   ]
 })

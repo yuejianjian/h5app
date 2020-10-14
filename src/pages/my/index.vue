@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>个人中心</h1>
+    <div class="btn">个人中心</div>
    
   </div>
 </template>
@@ -18,5 +18,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+  .btn{
+    font-size: 15px;
+  }
 </style>

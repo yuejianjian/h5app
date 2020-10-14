@@ -43,6 +43,7 @@
 
 <script>
 import { GetGys, Login,hotGoodList} from "@/api/login"
+import { getUserName,getPassWord,setUserName,setPassWord } from "@/utils/app.js"
 export default {
   name: 'HelloWorld',
   data () {
@@ -52,16 +53,36 @@ export default {
       showlist:false,
       gyslist:[],
       logoimg:"",
-      userphone:"18674022930",
-      password:"waxw1130",
+      userphone:"",
+      password:"",
       gysStatus:false,
       gys_no:'',
     }
   },
   mounted(){
-    //this.getGysList()
+    // if(this.userphone !=""&&this.userphone.length=='11'){
+    //   var params = {
+    //       mobile: this.userphone
+    //   }
+    //   this.getGysList(params);
+      
+    // }
+    this.getCookieName()
+    
   },
   methods:{
+    getCookieName(){
+      let username =getUserName();
+      let password =getPassWord();
+      if(username.length=='11'){
+        var params = {
+          mobile: username
+        }
+        this.getGysList(params);
+        this.userphone =username;
+        this.password =password;
+      }
+    },
     getGysList(params){
       GetGys(params).then(res =>{
         console.log(res);
@@ -126,9 +147,11 @@ export default {
         }
       Login(params).then(res =>{
         console.log(res);
+        setUserName(this.userphone)
+        setPassWord(this.password)
         this.$router.push({path:'/base/home'})
         //this.gethotgoodlist()
-      })
+      }).catch(err =>{})
       
     },
     //热销商品列表
