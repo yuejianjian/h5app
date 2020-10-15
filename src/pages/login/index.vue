@@ -74,7 +74,7 @@ export default {
     getCookieName(){
       let username =getUserName();
       let password =getPassWord();
-      if(username.length=='11'){
+      if(username){
         var params = {
           mobile: username
         }

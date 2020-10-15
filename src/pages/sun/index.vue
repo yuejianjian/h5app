@@ -1,7 +1,8 @@
 <template>
   <div class="hello">
     <h1>子页面</h1>
-    <div>{{msg}}</div>
+    <div>{{msg.name}}</div>
+    <div @click="getBaBa">发消息给巴巴</div>
   </div>
 </template>
 
@@ -9,17 +10,18 @@
 export default {
   name: 'Sun',
   props:{
-      msg:{
-         type:String,        
-      }
+    routerData:{
+      type:Object,
+      default:null
+    }
   },
   data () {
     return {
-        
+        msg:this.routerData
     }
   },
   mounted(){
-      console.log(this.msg);
+      console.log(this.routerData);
       //console.log(this.$route.query.searchvalue);
        //console.log(this.$route.params.searchvalue);
 
@@ -27,7 +29,11 @@ export default {
   methods:{
       parentHandleclick(e) {
         console.log(e)
+      },
+      getBaBa(){
+        this.$emit('babamsg',"我买房了")
       }
+
   }
 }
 </script>

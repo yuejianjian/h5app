@@ -2,7 +2,8 @@
   <div class="hello">
     <h1>商品查询列表也</h1>
    <div @click="gotosun">点击</div>
-   <child ref="mychild" :msg="msg" />
+   
+   <child ref="mychild" :routerData="message" @babamsg="shoudaosun" />
   </div>
 </template>
 
@@ -15,7 +16,10 @@ export default {
   },
   data () {
     return {
-      msg: '乐坚坚1111111'
+      message:{
+        name:'乐坚坚',
+        age:'25'
+      }
     }
   },
   mounted(){
@@ -28,6 +32,10 @@ export default {
         //   this.$router.push({
         //       path:'/sun'
         //   })
+      },
+      shoudaosun(val){
+        console.log("收到儿子的消息")
+        this.message.name=val;
       }
   }
 }
