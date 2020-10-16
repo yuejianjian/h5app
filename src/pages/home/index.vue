@@ -57,6 +57,9 @@
         <van-swipe-item class="swipelist">5</van-swipe-item>
         <van-swipe-item class="swipelist">6</van-swipe-item>
       </van-swipe>
+      <h1>{{price| guolvqi}}</h1>
+      <h2 v-if="data|isNullOrEmpty">是为空</h2>
+      <h2 v-else>不为空</h2>
     </div>
   </div>
 </template>
@@ -70,6 +73,13 @@ export default {
       msg: 'Welcome to Your Vue.js App',
       bannerlist:[],
       searchvalue:"",
+      price:100,
+      data:1
+    }
+  },
+  filters:{
+    guolvqi(val){
+      return val.toFixed(2)
     }
   },
   mounted(){

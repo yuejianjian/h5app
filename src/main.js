@@ -5,16 +5,22 @@ import App from './App'
 import router from './router'
 import store from './store/index'
 import "./utils/rem"
+import * as filters from "./utils/filters"
 import "./style/common.css"
 import Vant from 'vant'
 import { Lazyload } from 'vant';
 import 'vant/lib/index.css'
+
 
 Vue.use(Vant)
 Vue.use(Lazyload, {
   lazyComponent: true,
 });
 Vue.config.productionTip = false
+
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key])
+})
 
 /* eslint-disable no-new */
 new Vue({
