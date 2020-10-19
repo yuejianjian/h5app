@@ -31,7 +31,15 @@ export function getBannerList(data){
 export function hotGoodList(data){
     return service.request({
         method: "post",
-        url: "h5/kxdh/goods/ajax/homeRecommendGoods.do",
+        url: "/h5/kxdh/goods/ajax/homeRecommendGoods.do",
+        data
+    })
+}
+//获取常购商品列表
+export function userPurchaseGoods(data){
+    return service.request({
+        method: "post",
+        url: "/h5/kxdh/goods/ajax/userPurchaseGoods.do",
         data
     })
 }

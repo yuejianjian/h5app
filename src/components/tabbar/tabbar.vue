@@ -48,7 +48,7 @@
   position: fixed;
   width: 100%;
   bottom: 0;
-  height: 2.5rem;
+  height: 3.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -58,7 +58,7 @@
 #Tabbar>div {
   width:25%;
   text-align: center;
-  height: 2.5rem;
+  height: 1rem;
   padding-top: 2rem;
   font-size: 0.8rem;
 }
