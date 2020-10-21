@@ -36,7 +36,8 @@ export default new Router({
           path: '/base/home',
           name: 'Home',
           meta:{
-            title:'首页'
+            title:'首页',
+            keepAlive:true
           },
           component: () =>import("@/pages/home/index.vue")
         },
@@ -44,7 +45,8 @@ export default new Router({
           path: '/base/fenlei',
           name: 'FenLei',
           meta:{
-            title:'分类'
+            title:'分类',
+            keepAlive:false
           },
           component: () =>import("@/pages/fenlei/index.vue")
         },
@@ -52,7 +54,8 @@ export default new Router({
           path: '/base/shop',
           name: 'Shop',
           meta:{
-            title:'购物车'
+            title:'购物车',
+            keepAlive:true
           },
           component: () =>import("@/pages/shop/index.vue")
         },

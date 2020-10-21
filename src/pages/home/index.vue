@@ -138,6 +138,8 @@ export default {
     this.getBannerList();
     this.getuserPurchaseGoods();
     this.getHotGoodList();
+    var a 
+    console.log(a)
   },
   methods:{
     hideSpec(msg) {

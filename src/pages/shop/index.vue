@@ -12,6 +12,16 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  methods:{
+    getlist(){
+      console.log("购物车页面");
+       console.log(this.$router)
+       console.log(this.$route)
+    }
+  },
+  mounted(){
+    this.getlist();
   }
 }
 </script>

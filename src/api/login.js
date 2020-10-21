@@ -43,3 +43,11 @@ export function userPurchaseGoods(data){
         data
     })
 }
+//获取活动分类
+export function getClassificaionList(data){
+    return service.request({
+        method: "post",
+        url: "/h5/kxdh/goods/ajax/getClassificaionList.do",
+        data
+    })
+}

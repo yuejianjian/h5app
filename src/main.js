@@ -6,6 +6,7 @@ import router from './router'
 import store from './store/index'
 import "./utils/rem"
 import * as filters from "./utils/filters"
+import "./router/premit"
 import "./style/common.css"
 import Vant from 'vant'
 import { Lazyload } from 'vant';
